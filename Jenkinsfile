@@ -1,11 +1,11 @@
 pipeline {
-    agent { label 'dotnet6' }
+    agent { label 'LABEL2' }
     triggers { pollSCM('* * * * *') }
     stages {
         stage('vcs') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/khajadevopsmarch23/MusicStore.git'
+                    url: 'https://github.com/msteja143/MusicStore.git'
             }
         }
         stage('build') {
