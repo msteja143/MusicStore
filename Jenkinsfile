@@ -5,7 +5,7 @@ pipeline {
         stage('vcs') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/msteja143/MusicStore.git'
+                    url: 'https://github.msteja143/MusicStore.git'
             }
         }
         stage('build') {
@@ -15,8 +15,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'dotnet test --logger "junit;LogFilePath=TEST-musicstoretest.xml" ./MusicStoreTest/MusicStoreTest.csproj'
-                junit testResults: '**/TEST-*.xml'
+                sh 'dotnet test ./MusicStoreTest/MusicStoreTest.csproj'
             }
         }
     }
