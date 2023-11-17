@@ -20,6 +20,7 @@ pipeline {
                 junit testResults: '**/TEST-*.xml'
             }
         }
+    }
            post {
          success {
             mail subject: "Jenkins Build of ${JOB_NAME} with id ${BUILD_ID} is success",
@@ -34,5 +35,4 @@ pipeline {
                 from: 'tejaarts42@gmail.com'
                  }
               }
-    }
 }
