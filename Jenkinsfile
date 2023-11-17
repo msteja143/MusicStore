@@ -10,7 +10,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'dotnet restore ./MusicStore/MusicStore.csprojdotnet build ./MusicStore/MusicStore.csproj'
+                sh 'dotnet restore ./MusicStore/MusicStore.csproj dotnet build ./MusicStore/MusicStore.csproj'
             }
         }
         stage('test') {
